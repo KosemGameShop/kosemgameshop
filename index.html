@@ -10,7 +10,16 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #f9820b; /* Turuncu */
       color: #fff;
-    }
+    } <input type="text" id="searchInput" placeholder="Oyun ara..." 
+style="padding:10px; width:80%; margin:20px auto; display:block; border-radius:5px; border:1px solid #ccc;">
+
+<ul id="gameList" style="list-style:none; padding:0; text-align:center; font-size:18px;">
+  <li>ETS2 – Modlu Offline Hesap</li>
+  <li>GTA V – Türk Araçlı Paket</li>
+  <li>BeamNG.drive – Full Modlu</li>
+  <li>City Car Driving – Türkiye Trafiği</li>
+  <li>Call of Duty – Offline Hesap</li>
+</ul>
 
     header {
       text-align: center;
@@ -427,3 +436,15 @@
   <p class="price">Fiyat: 29.99 TL</p>
 
   <a href="https://wa.me/905304931424?text=Merhaba,+Far+Cry+6+Steam+Hesabı+satın+almak+istiyorum
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const gameList = document.getElementById("gameList").getElementsByTagName("li");
+
+  searchInput.addEventListener("keyup", function() {
+    const filter = searchInput.value.toLowerCase();
+    for (let i = 0; i < gameList.length; i++) {
+      const txt = gameList[i].textContent.toLowerCase();
+      gameList[i].style.display = txt.includes(filter) ? "" : "none";
+    }
+  });
+</script>
