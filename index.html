@@ -7,7 +7,56 @@
   <style>
   <input type="text" id="searchInput" placeholder="Oyun ara..." 
 style="padding:10px; width:80%; margin:20px auto; display:block; border-radius:5px; border:1px solid #ccc;">
-  body {<input type="text" id="searchInput" placeholder="Oyun ara..." 
+  body <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ürün Arama</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #searchInput { padding: 10px; width: 100%; margin-bottom: 20px; font-size: 16px; }
+    .product { padding: 10px; border: 1px solid #ccc; margin-bottom: 10px; border-radius: 5px; }
+    .product a { text-decoration: none; color: #333; font-weight: bold; }
+    .price { color: green; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="searchInput" placeholder="Steam oyunu ara..." onkeyup="searchProducts()">
+
+  <div id="productList">
+    <div class="product">
+      <a href="https://wa.me/905xxxxxxxxx?text=GTA V satın almak istiyorum">Steam GTA V</a>
+      <div class="price">29.99 TL</div>
+    </div>
+    <div class="product">
+      <a href="https://wa.me/905xxxxxxxxx?text=ETS2 satın almak istiyorum">Steam ETS2</a>
+      <div class="price">29.99 TL</div>
+    </div>
+    <div class="product">
+      <a href="https://wa.me/905xxxxxxxxx?text=City Car Driving satın almak istiyorum">Steam City Car Driving</a>
+      <div class="price">29.99 TL</div>
+    </div>
+    <div class="product">
+      <a href="https://wa.me/905xxxxxxxxx?text=Football Manager satın almak istiyorum">Steam Football Manager</a>
+      <div class="price">29.99 TL</div>
+    </div>
+  </div>
+
+  <script>
+    function searchProducts() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const products = document.querySelectorAll(".product");
+
+      products.forEach(product => {
+        const text = product.textContent.toLowerCase();
+        product.style.display = text.includes(input) ? "block" : "none";
+      });
+    }
+  </script>
+
+</body>
+</html> 
 style="padding:10px; width:80%; margin:20px auto; display:block; border-radius:5px; border:1px solid #ccc;">
 
 <ul id="gameList" style="list-style:none; padding:0; text-align:center; font-size:18px;">
@@ -471,5 +520,6 @@ style="padding:10px; width:80%; margin:20px auto; display:block; border-radius:5
     }
   });
 </script>
+
 
 
